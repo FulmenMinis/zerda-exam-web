@@ -1,0 +1,24 @@
+{
+  "name": "zerda-exam-web",
+  "version": "1.0.0",
+  "description": "### Getting Started  - Fork this repository under your own account  - Clone the forked repository to your computer  - Commit your progress frequently and with descriptive commit messages  - All your answers and solutions should go in this repository",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamastatai/zerda-exam-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamastatai/zerda-exam-web/issues"
+  },
+  "homepage": "https://github.com/tamastatai/zerda-exam-web#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "tape": "^4.6.3"
+  }
+}
