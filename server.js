@@ -60,8 +60,8 @@ app.post('/exam', function(req, res) {
         console.log(err.toString());
         return;
       }
-      let content = rows.map(function () {
-        return e.project_name;
+      let content = rows.map(function (i) {
+        return i.project_name;
       });
       console.log("yeah");
       res.send({"status": "ok", "projects": content});

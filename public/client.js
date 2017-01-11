@@ -15,6 +15,7 @@ const Feedback = function () {
   return {
     send: send
   };
+}
 
 const changeContents = function() {
   const list = document.querySelector('ul');
@@ -56,6 +57,7 @@ const changeContents = function() {
     displayLoading: displayLoading,
     showContent: showContent
   };
+}
 
 const ajax = function () {
   let data = [];
@@ -76,7 +78,7 @@ const ajax = function () {
       };
     };
 
-    xhr.open('POST', 'http://localhost:3000/exam', true);
+    xhr.open('POST', 'http://localhost:3001/exam', true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify({"feedback": text, "scale": number, "email": email}));
     // console.log({"feedback": text, "scale": number, "email": email});
@@ -86,3 +88,6 @@ const ajax = function () {
   return {
     postMessage: postMessage
   };
+}
+
+console.log('running');
