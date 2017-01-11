@@ -33,7 +33,7 @@ var validator = function (req) {
   function findPraise () {
     var counter = 0;
     var textArray = text.split(' ');
-    textArray.forEach( function(word) {
+    textArray.forEach(function(word) {
       if (praise.indexOf(word)) {
         counter++;
       }
@@ -43,7 +43,7 @@ var validator = function (req) {
     }
   };
 
-  if (email.indexOf('@') != -1  && scale >= 10 && findNiceWords() == true) {
+  if (email.indexOf('@') != -1  && scale >= 10 && findPraise() == true) {
     return true;
   } else {
     return false;
