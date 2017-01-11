@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 70rem;
+  margin: 0 auto;
+}
+
+p, label {
+  font-size: 4rem;
+  display: inline-block;
+  text-align: left;
+}
+
+span {
+  font-size: 5rem;
+  display: block;
+}
+
+input {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

@@ -1,6 +1,6 @@
 'use strict';
 
-const sendFeedback = (function () {
+const Feedback = (function () {
   const button = document.querySelector('button');
   const textarea = document.querySelector('textarea');
   const number = document.querySelector('.number');
@@ -17,8 +17,42 @@ const sendFeedback = (function () {
 
 }) ();
 
+const changeContents = function() {
+  const list = document.querySelector('ul');
+  const section = document.querySelector('section');
+  const span = document.querySelector('span');
 
-const ajax = (function () {
+  let renderResponse = function (data) {
+    data.projects.forEach(function(item){
+      createListItem(item);
+    })
+  };
+
+  let createListItem = function (text) {
+    const listItem = document.createElement('li');
+    list.appendChild(listItem);
+    listItem.innerHTML = text;
+  };
+
+  let displayLoading = function () {
+    section.classList.add('hide');
+    span.classList.remove('hide');
+  };
+
+  let showContent = function () {
+    section.classList.remove('hide');
+    span.classList.add('hide');
+  };
+
+  return {
+    renderResponse: renderResponse,
+    displayLoading: displayLoading,
+    showContent: showContent
+  };
+
+}) ();
+
+const ajax = function () {
 
   let postMessage = function (text, number, email) {
     console.log(text + ' ' + number + ' ' + email);
