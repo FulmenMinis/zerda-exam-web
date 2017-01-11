@@ -21,14 +21,29 @@ connection.connect(function connectMsql(error) {
   }
 });
 
-var praise = ["amazing", "awesome", "blithesome", "excellent", "fabulous", "fantastic", "favorable", "fortuitous", "great", "incredible", "ineffable", "mirthful", "outstanding", "perfect", "propitious", "remarkable", "smart", "spectacular", "splendid", "stellar", "stupendous", "super", "ultimate", "unbelievable", "wondrous"];
-
 var validator = function (req) {
-  let text = req.body.feedback;
-  let scale = parseInt(req.body.scale);
-  let email = req.body.email;
 
-  if (email.indexOf != -1  && scale >= 10) {
+  var praise = ["amazing", "awesome", "blithesome", "excellent", "fabulous", "fantastic", "favorable", "fortuitous", "great", "incredible", "ineffable", "mirthful", "outstanding", "perfect", "propitious", "remarkable", "smart", "spectacular", "splendid", "stellar", "stupendous", "super", "ultimate", "unbelievable", "wondrous"];
+
+  var text = req.body.feedback;
+  console.log(text.split(' '));
+  var scale = parseInt(req.body.scale);
+  var email = req.body.email;
+
+  function findPraise () {
+    var counter = 0;
+    var textArray = text.split(' ');
+    textArray.forEach( function(word) {
+      if (praise.indexOf(word)) {
+        counter++;
+      }
+    });
+    if (counter >= 3) {
+      return true;
+    }
+  };
+
+  if (email.indexOf('@') != -1  && scale >= 10 && findNiceWords() == true) {
     return true;
   } else {
     return false;
